@@ -1,8 +1,8 @@
-# hashing-assignment1-task1
+# hashing-assignment1
 This folder contains my solution for Assignment 1 of 3D5 Data Structures and Algorithms.
 
 The Assignment is detailed below:
-------------------------------------------------------------------------------------------------
+
 Task 1: Getting Started
 
 For the first part of this assignment, you should write a hash table to store the frequency of
@@ -28,7 +28,7 @@ linear probing.
 Set up your program so that it takes a CSV file as an argument and test your hash table by
 loading the test data provided in names.csv. Extend the solution to take in a name as input
 from a user and returning its frequency.
-------------------------------------------------------------------------------------------------
+
 Task 2: Choosing a hash function
 
 Now find a better hash function hash2 for the data considered. Feel free to consult online
@@ -37,7 +37,7 @@ sample! Do not overfit your function to the sample provided, it should work well
 Irish surnames. Test your function on the sample data, indicate in your report how many collisions occur, is it better than
 the result from task 1? (Note that it is expected that you will get less collisions than the
 automatic tests here!)
-------------------------------------------------------------------------------------------------
+
 Task 3: Twice the Fun
 
 Using the hashing function hash3 below, augment your solution to Task 1 such that it uses
@@ -45,15 +45,15 @@ double hashing instead of linear probing. Use this to demonstrate the improvemen
 hashing over linear probing. Document in the report whether hash3 is a good choice to
 implement double hashing and explain why.
 
-int hash3(char* s){
-int hash = 0;
-while(*s){
-hash = 1+ (hash + *s) % (ARRAY_SIZE-1);
-s++;
+int hash3(char* s) {
+    int hash = 0;
+    while(*s) {
+        hash = 1 + (hash + *s)%(ARRAY_SIZE-1);
+        s++;
+    }
+    return hash;
 }
-return hash;
-}
-------------------------------------------------------------------------------------------------
+
 Task 4: A More Interesting Application - 5 Marks
 
 Hash tables have numerous applications in computer science. One domain where they can find
