@@ -1,4 +1,4 @@
-#Assignment1-hashing
+# Assignment1-hashing
 
 This folder contains my solution for Assignment 1 of 3D5 Data Structures and Algorithms.
 
