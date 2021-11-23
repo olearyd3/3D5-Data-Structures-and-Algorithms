@@ -75,15 +75,17 @@ during the test
 5. Num Title Search Errors: The number of searches for book titles which returned the
 wrong results
 
-6. Avg, Var Total Title Search time: The average and variance of time taken persearch. Total Title Search Time is the total time spent searching for titles.
-7. 
+6. Avg, Var Total Title Search time: The average and variance of time taken persearch. 
+
+7. Total Title Search Time is the total time spent searching for titles.
+
 8. Total Word Count Searches: The number of searches for book word counts that
 were executed during the test
 
-8. Num Word Count Search Errors: The number of searches for book word counts
+9. Num Word Count Search Errors: The number of searches for book word counts
 which returned the wrong results
 
-9. Avg, Var Total Word Count Search time: The average and variance of time taken
+10. Avg, Var Total Word Count Search time: The average and variance of time taken
 per-search. Total Word Count Search Time is the total time spent searching for word
 counts
 
