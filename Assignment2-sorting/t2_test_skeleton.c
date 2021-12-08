@@ -12,6 +12,7 @@ void fill_without_duplicates(int *array, int size);
 void selectionSort(int arr[], int size);
 void insertionSort(int arr[], int size);
 void quickSort(int arr[], int size);
+void bubbleSort(int array[], int size);
 
 int compare(int a, int b) ;
 void swap(int *a, int *b);
@@ -23,11 +24,30 @@ int main()
 {
     int number_array[10];
 
-    fill_with_duplicates(number_array, 10);
+    fill_descending(number_array, 10);
     printArray(number_array, 10);
 
     insertionSort(number_array, 10);
     printArray(number_array, 10);
+
+    fill_with_duplicates(number_array, 10);
+    printArray(number_array, 10);
+
+    quickSort(number_array, 10);
+    printArray(number_array, 10);
+
+    fill_with_duplicates(number_array, 10);
+    printArray(number_array, 10);
+
+    selectionSort(number_array, 10);
+    printArray(number_array, 10);
+
+    fill_without_duplicates(number_array, 10);
+    printArray(number_array, 10);
+
+    bubbleSort(number_array, 10);
+    printArray(number_array, 10);
+
     return 0;
 }
 
@@ -112,28 +132,34 @@ void selectionSort(int arr[], int size)
         min = j;
       }
     }
-    if(min != i)
-    {
       swap(&arr[i], &arr[min]);
-    }
   }
 } 
 
-//function to implement an insertion sort
-void insertionSort(int arr[], int size) 
-{ 
-  for(int pass = 0; pass < size-1; pass++)
-  {
-    for(int i = pass+1; i > 0; i--)
-    {
-      number_comparisons++;
-      if(arr[i-1] > arr[i])
-      {
-        swap(&arr[i], &arr[i-1]);
-      }
-      else
-      {
-        break;
+//the above was MY one for the assignment, the below is the more 'correct'
+void insertionSort(int arr[], int size) {
+  for(int i = 1; i < size; i++) {
+    int key = arr[i];
+    int j = i-1;
+
+    while(j >= 0 && arr[j] > key) {
+      arr[j+1] = arr[j];
+      j = j-1;
+    }
+    arr[j+1] = key;
+  }
+}
+
+// perform the bubble sort
+void bubbleSort(int arr[], int size) {
+  // loop to access each array element
+  for (int step = 0; step < size - 1; step++) {    
+    // loop to compare array elements
+    for (int i = 0; i < size - step - 1; i++) {
+      // compare two adjacent elements and change > to < to sort in descending order
+      if (arr[i] > arr[i + 1]) {
+        // swapping occurs if elements are not in the intended order
+        swap(&arr[i], &arr[i+1]);
       }
     }
   }
